@@ -1,0 +1,17 @@
+stm32l0xx_ll_exti.h:891:26:LL_EXTI_IsActiveFlag_0_31	16	static
+stm32l0xx_ll_exti.h:971:22:LL_EXTI_ClearFlag_0_31	16	static
+stm32l0xx_ll_tim.h:2576:22:LL_TIM_ClearFlag_CC1	16	static
+stm32l0xx_ll_tim.h:2587:26:LL_TIM_IsActiveFlag_CC1	16	static
+stm32l0xx_ll_gpio.h:762:26:LL_GPIO_IsInputPinSet	16	static
+stm32l0xx_ll_gpio.h:843:22:LL_GPIO_SetOutputPin	16	static
+stm32l0xx_ll_gpio.h:872:22:LL_GPIO_ResetOutputPin	16	static
+stm32l0xx_ll_gpio.h:901:22:LL_GPIO_TogglePin	16	static
+stm32l0xx_it.c:70:6:NMI_Handler	8	static
+stm32l0xx_it.c:83:6:HardFault_Handler	8	static
+stm32l0xx_it.c:98:6:SVC_Handler	8	static
+stm32l0xx_it.c:111:6:PendSV_Handler	8	static
+stm32l0xx_it.c:124:6:SysTick_Handler	8	static
+stm32l0xx_it.c:145:6:EXTI0_1_IRQHandler	8	static
+stm32l0xx_it.c:172:6:EXTI4_15_IRQHandler	8	static
+stm32l0xx_it.c:235:6:ADC1_COMP_IRQHandler	8	static
+stm32l0xx_it.c:249:6:TIM2_IRQHandler	8	static
