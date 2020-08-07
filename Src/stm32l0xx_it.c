@@ -151,6 +151,8 @@ void EXTI0_1_IRQHandler(void)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_0);
     /* USER CODE BEGIN LL_EXTI_LINE_0 */
+    ExtI_IN3_IN7_Callback();
+    /*function defined in main.c*/
 
     /* USER CODE END LL_EXTI_LINE_0 */
   }
@@ -158,6 +160,8 @@ void EXTI0_1_IRQHandler(void)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_1);
     /* USER CODE BEGIN LL_EXTI_LINE_1 */
+    ExtI_IN0_IN4_Callback();
+    /*function defined in main.c*/
 
     /* USER CODE END LL_EXTI_LINE_1 */
   }
@@ -186,29 +190,41 @@ void EXTI4_15_IRQHandler(void)
 	{
 		LL_GPIO_SetOutputPin(IN4_GPIO_Port, IN4_Pin);
 	}
-
+    ExtI_IN0_IN4_Callback();
+    /*function defined in main.c*/
     /* USER CODE END LL_EXTI_LINE_4 */
   }
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_5) != RESET)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_5);
     /* USER CODE BEGIN LL_EXTI_LINE_5 */
-
+    ExtI_IN1_IN5_Callback();
+    /*function defined in main.c*/
     /* USER CODE END LL_EXTI_LINE_5 */
   }
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_6) != RESET)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_6);
     /* USER CODE BEGIN LL_EXTI_LINE_6 */
-
+    ExtI_IN1_IN5_Callback();
+    /*function defined in main.c*/
     /* USER CODE END LL_EXTI_LINE_6 */
   }
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_7) != RESET)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_7);
     /* USER CODE BEGIN LL_EXTI_LINE_7 */
-
+    ExtI_IN2_IN6_Callback();
+    /*function defined in main.c*/
     /* USER CODE END LL_EXTI_LINE_7 */
+  }
+  if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_8) != RESET)
+  {
+    LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_8);
+    /* USER CODE BEGIN LL_EXTI_LINE_8 */
+    ExtI_IN3_IN7_Callback();
+    /*function defined in main.c*/
+    /* USER CODE END LL_EXTI_LINE_8 */
   }
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_9) != RESET)
   {
@@ -221,7 +237,8 @@ void EXTI4_15_IRQHandler(void)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_11);
     /* USER CODE BEGIN LL_EXTI_LINE_11 */
-
+    ExtI_IN2_IN6_Callback();
+    /*function defined in main.c*/
     /* USER CODE END LL_EXTI_LINE_11 */
   }
   /* USER CODE BEGIN EXTI4_15_IRQn 1 */
@@ -249,15 +266,33 @@ void ADC1_COMP_IRQHandler(void)
 void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
-	 if(LL_TIM_IsActiveFlag_CC1(TIM2) == 1)
-	  {
-		 /* Clear the update interrupt flag*/
-		 LL_TIM_ClearFlag_CC1(TIM2);
-
-		 /* TIM2 capture/compare interrupt processing(function defined in main.c) */
-		 TIM2CaptureCompareCH1_Callback();
-	  }
-
+	if(LL_TIM_IsActiveFlag_CC1(TIM2) == 1)
+		  {
+			/* Clear the update interrupt flag*/
+			LL_TIM_ClearFlag_CC1(TIM2);
+			TIM2CaptureCompareCH1_Callback();
+			/* TIM2 capture/compare interrupt processing(function defined in main.c) */
+		  }
+	if(LL_TIM_IsActiveFlag_CC2(TIM2) == 1)
+	  	  {
+			/* Clear the update interrupt flag*/
+		 	LL_TIM_ClearFlag_CC2(TIM2);
+		 	TIM2CaptureCompareCH2_Callback();
+		 	/* TIM2 capture/compare interrupt processing(function defined in main.c) */
+		 }
+	if(LL_TIM_IsActiveFlag_CC3(TIM2) == 1)
+		{
+			/* Clear the update interrupt flag*/
+			LL_TIM_ClearFlag_CC3(TIM2);
+			TIM2CaptureCompareCH3_Callback();				 /* TIM2 capture/compare interrupt processing(function defined in main.c) */
+		}
+	if(LL_TIM_IsActiveFlag_CC4(TIM2) == 1)
+		{
+			/* Clear the update interrupt flag*/
+			LL_TIM_ClearFlag_CC4(TIM2);
+			TIM2CaptureCompareCH4_Callback();
+			/* TIM2 capture/compare interrupt processing(function defined in main.c) */
+		}
 
   /* USER CODE END TIM2_IRQn 0 */
   /* USER CODE BEGIN TIM2_IRQn 1 */
