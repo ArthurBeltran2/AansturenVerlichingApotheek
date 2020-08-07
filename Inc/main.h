@@ -95,6 +95,9 @@ void Error_Handler(void);
 #define IN4_Pin LL_GPIO_PIN_1
 #define IN4_GPIO_Port GPIOB
 #define IN4_EXTI_IRQn EXTI0_1_IRQn
+#define IN3_Pin LL_GPIO_PIN_8
+#define IN3_GPIO_Port GPIOA
+#define IN3_EXTI_IRQn EXTI4_15_IRQn
 #define user_button_Pin LL_GPIO_PIN_9
 #define user_button_GPIO_Port GPIOA
 #define user_button_EXTI_IRQn EXTI4_15_IRQn
@@ -138,6 +141,8 @@ void Error_Handler(void);
                                                                  0 bit  for subpriority */
 #endif
 /* USER CODE BEGIN Private defines */
+#define RCC_MCO_Pin LL_GPIO PIN_8
+#define RCC_MCO_GPIO_PORT GPIOA
 
 /* TIM2 interrupt processing */
 void TIM2CaptureCompareCH1_Callback(void);
